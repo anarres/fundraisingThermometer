@@ -13,3 +13,5 @@ PUBLIC DOMAIN because it's a completely obvious
  thing to do and in a sane world no-one would think
 to apply the concept of intellectual property to
 something like this :)
+
+See it in action at foofurple.com/thermometer/
