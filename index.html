@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<!--
+
+ * * * Foofurple's HTML5 Simple Fundraising Thermometer * * *
+
+This website / Internet application, comprising the files:
+
+ - index.html
+ - thermometer.js
+ - style.css
+
+is dedicated to the Public Domain and may be freely used by anyone,
+for any purpose.
+
+-->
+
+<title>Make a charity fundraising thermometer image | Foofurple</title>
+<meta name="description" content="Make a charity fundraising thermometer image | Foofurple">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="thermometer.js"></script>
+</head>
+
+<body onload="init()">
+
+<div id="container">
+<h1>Simple charity fundraising thermometer</h1>
+
+<div style="clear:both;height:20px;"></div>
+
+<div id="form">
+    <div class="inputRow">
+        <label for="goalAmount">Goal amount:</label>
+        <input type="text" id="goalAmount" value="100">
+    </div>
+
+    <div class="inputRow">
+        <label for="amountSoFar">Amount raised so far:</label>
+        <input type="text" id="amountSoFar" value="60">
+    </div>
+
+    <div class="inputRow">
+        <label for="currency">Currency symbol</label>
+        <input type="text" id="currency" value="&pound">
+    </div>
+
+    <br> <button onclick="draw()">Update image</button>
+    <br><br> <button onclick="save()">Save image</button>
+</div> <!--#form-->
+
+<div id="canvasDiv">
+    <canvas id="thermometerImage">
+    </canvas><!--#thermometerImage-->
+</div> <!--#canvasDiv-->
+
+<p id="download">
+<a id="downloadLink">Right-click to save your image</a>
+ We suggest you name it 'thermometer.png' or something like that.
+</p>
+
+
+<div style="clear:both;height:40px"></div>
+
+<p>
+<strong>Advantages:</strong>
+ you don't need to install anything, just use this website to generate an image, then post that image to your blog / website / social networking page.
+</p>
+<p>
+<strong>Disadvantages:</strong> 
+it doesn't work automatically; everytime you want to increase the 'temperature' level on the thermometer you have to remove the old image from your website, and generate a new image to replace it.
+</p>
+
+</div> <!--#container-->
+
+<div style="visibility:hidden">
+<img src="thermometer.png" id="therm">
+</div>
+
+</body>
+</html>
+>

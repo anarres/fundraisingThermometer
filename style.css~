@@ -1,0 +1,81 @@
+/* General layout */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+body {
+    font-family: Georgia, serif;
+    background-color: #f0f3db;
+}
+#container {
+    min-width: 400px;
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+/* General typography  */
+
+h1, h2 {
+    font-size: 1.8em;
+    font-weight: normal;
+    padding: 10px 0px;
+}
+h3,h4,h5,h6 {
+    font-size: 1em;
+    font-weight:bold;
+    padding: 10px 0px;
+}
+p {
+    padding: 5px 0px;
+    line-height: 1.5em;
+}
+a {
+    text-decoration: none;
+    color: #07108C;
+}
+a:hover {
+    color: #0C1BEB;
+}
+input {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size:1em;
+}
+input.radio {
+    margin-right: 10px;
+    background-color:yellow;
+}
+button {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding-bottom: 1px;
+}
+div#form {
+    max-width:400px;
+    margin-right:30px;
+    float: left;
+}
+div#canvasImage {
+    max-width:350px;
+    float: left;
+}
+div.inputRow {
+    padding: 10px 0px;
+}
+p#download {
+    visibility: hidden;
+}
+a#downloadLink {
+    font-size: 1.5em;
+}
