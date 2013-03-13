@@ -44,17 +44,16 @@ function getAmount() {
     return parseFloat(document.getElementById("amountSoFar").value);
 }
 
-function reset() {
-    targetLabelReset();
-    amountLabelReset();
-}
-
 function targetLabelReset() {
     var label = "" + document.getElementById('currency').value + document.getElementById("targetAmount").value;
+    //document.getElementById("targetAmountLabel").setAttribute("value", label);
+
     document.getElementById("targetAmountLabel").value = label;
 }
 function amountLabelReset() {
     var label = "" + document.getElementById('currency').value + document.getElementById("amountSoFar").value;
+    //document.getElementById("amountSoFarLabel").setAttribute("value", label);
+
     document.getElementById("amountSoFarLabel").value = label;
 }
 
