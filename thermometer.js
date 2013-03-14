@@ -36,6 +36,12 @@ var topCircleX = bulbX;
 var topCircleY = rectY1;
 var topCircleR = rectWidth/2;
 
+// Tick marks along thermometer shaft
+var tickX1 = rectX1+10;
+var tickX2 = rectX1+30;
+var smallTickX1 = rectX1+20;
+var smallTickX2 = rectX1+30;
+
 
 
 function getY(fraction) {
@@ -131,56 +137,58 @@ function draw() {
 
     // Tick markers
     ctx.beginPath();    
-    ctx.moveTo(rectX1+10,rectY1);
-    ctx.lineTo(rectX1+30,rectY1);
+    ctx.moveTo(tickX1,rectY1);
+    ctx.lineTo(tickX2,rectY1);
     ctx.stroke();
 
     var tick8Y = getY(0.8);
-    ctx.moveTo(rectX1+10,tick8Y);
-    ctx.lineTo(rectX1+30,tick8Y);
+    ctx.moveTo(tickX1,tick8Y);
+    ctx.lineTo(tickX2,tick8Y);
     ctx.stroke();
 
     var tick6Y = getY(0.6);
-    ctx.moveTo(rectX1+10,tick6Y);
-    ctx.lineTo(rectX1+30,tick6Y);
+    ctx.moveTo(tickX1,tick6Y);
+    ctx.lineTo(tickX2,tick6Y);
     ctx.stroke();
 
     var tick4Y = getY(0.4);
-    ctx.moveTo(rectX1+10,tick4Y);
-    ctx.lineTo(rectX1+30,tick4Y);
+    ctx.moveTo(tickX1,tick4Y);
+    ctx.lineTo(tickX2,tick4Y);
     ctx.stroke();
 
     var tick2Y = getY(0.2);
-    ctx.moveTo(rectX1+10,tick2Y);
-    ctx.lineTo(rectX1+30,tick2Y);
+    ctx.moveTo(tickX1,tick2Y);
+    ctx.lineTo(tickX2,tick2Y);
     ctx.stroke();
+
 
     // Small ticks
     var smallTick9Y = getY(0.9);
-    ctx.moveTo(rectX1+20,smallTick9Y);
-    ctx.lineTo(rectX1+30,smallTick9Y);
+    ctx.moveTo(smallTickX1,smallTick9Y);
+    ctx.lineTo(smallTickX2,smallTick9Y);
     ctx.lineWidth=2;
     ctx.stroke();
 
     var smallTick7Y = getY(0.7);
-    ctx.moveTo(rectX1+20,smallTick7Y);
-    ctx.lineTo(rectX1+30,smallTick7Y);
+    ctx.moveTo(smallTickX1,smallTick7Y);
+    ctx.lineTo(smallTickX2,smallTick7Y);
     ctx.stroke();
 
     var smallTick5Y = getY(0.5);
-    ctx.moveTo(rectX1+20,smallTick5Y);
-    ctx.lineTo(rectX1+30,smallTick5Y);
+    ctx.moveTo(smallTickX1,smallTick5Y);
+    ctx.lineTo(smallTickX2,smallTick5Y);
     ctx.stroke();
 
     var smallTick3Y = getY(0.3);
-    ctx.moveTo(rectX1+20,smallTick3Y);
-    ctx.lineTo(rectX1+30,smallTick3Y);
+    ctx.moveTo(smallTickX1,smallTick3Y);
+    ctx.lineTo(smallTickX2,smallTick3Y);
     ctx.stroke();
 
     var smallTick1Y = getY(0.1);
-    ctx.moveTo(rectX1+20,smallTick1Y);
-    ctx.lineTo(rectX1+30,smallTick1Y);
+    ctx.moveTo(smallTickX1,smallTick1Y);
+    ctx.lineTo(smallTickX2,smallTick1Y);
     ctx.stroke();
+
 
     // Write out the 'temperature'
     ctx.font = "22px Arial";

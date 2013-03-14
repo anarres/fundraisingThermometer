@@ -36,6 +36,12 @@ var topCircleX = bulbX;
 var topCircleY = rectY1;
 var topCircleR = rectWidth/2;
 
+// Tick marks along thermometer shaft
+var tickX1 = rectX1+10;
+var tickX2 = rectX1+30;
+var smallTickX1 = rectX1+20;
+var smallTickX2 = rectX1+30;
+
 
 
 function getY(fraction) {
@@ -54,7 +60,7 @@ function reset() {
     amountLabelReset();
 }
 function targetLabelReset() {
-    var label = "target: " + document.getElementById('currency').value + document.getElementById("targetAmount").value;
+    var label = "Target: " + document.getElementById('currency').value + document.getElementById("targetAmount").value;
     document.getElementById("targetAmountLabel").value = label;
 }
 function amountLabelReset() {
