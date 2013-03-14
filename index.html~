@@ -89,8 +89,10 @@ for any purpose.
 it doesn't work automatically; everytime you want to increase the 'temperature' level on the thermometer you have to remove the old image from your website, and generate a new image to replace it.
 </p>
 
+
 <div id="footer">
-<p>Found a bug? Let us know so we can fix it - send a message with as much detail as possible about what you were doing and what happened, to info at foofurple dot com.
+
+<p>Found a bug? Let us know what happened and we'll try to fix it. mail: info at foofurple dot com.</p>
 </div>
 
 </div> <!--#container-->

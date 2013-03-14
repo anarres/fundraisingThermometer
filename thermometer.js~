@@ -13,50 +13,54 @@ for any purpose.
 
 */
 
+
+
+// Canvas dimensions
 var canvasWidth = 400;
 var canvasHeight = 400;
 
-var bulbX = 100;
-var bulbY = 350;
-var bulbR = 35;     
+// Bulb dimensions
+var bulbX = 100;    // x-coordinate of the bulb center
+var bulbY = 350;    // y-coordinate of the bulb center
+var bulbR = 35;     // bulb radius
 
+// Dimensions of the rectangular shaft of the thermometer
 var rectX1 = 85;
 var rectY1 = 20;
-var rectWidth = 30;
+var rectWidth = 30;     // Even number
 var rectHeight = 300;
 var rectY2 = rectY1 + rectHeight;
 
-var topCircleX = 100;
-var topCircleY = 20;
-var topCircleR = 15;
+// Dimensions of the rounded top of the thermometer shaft
+var topCircleX = bulbX;
+var topCircleY = rectY1;
+var topCircleR = rectWidth/2;
 
-// Takes a fraction like 0.6 and returns y coordinate for top of rect
+
+
 function getY(fraction) {
     var deltaY = fraction * rectHeight;
     var Y = parseInt(rectY2 - deltaY);
     return Y;
 }
-
 function getTarget() {
     return parseFloat(document.getElementById("targetAmount").value);
 }
 function getAmount() {
     return parseFloat(document.getElementById("amountSoFar").value);
 }
-
+function reset() {
+    targetLabelReset();
+    amountLabelReset();
+}
 function targetLabelReset() {
-    var label = "" + document.getElementById('currency').value + document.getElementById("targetAmount").value;
-    //document.getElementById("targetAmountLabel").setAttribute("value", label);
-
+    var label = "target: " + document.getElementById('currency').value + document.getElementById("targetAmount").value;
     document.getElementById("targetAmountLabel").value = label;
 }
 function amountLabelReset() {
     var label = "" + document.getElementById('currency').value + document.getElementById("amountSoFar").value;
-    //document.getElementById("amountSoFarLabel").setAttribute("value", label);
-
     document.getElementById("amountSoFarLabel").value = label;
 }
-
 function save() {
     var dataUrl = document.getElementById("thermometerImage").toDataURL();
     document.getElementById('download').style.visibility = "visible";
@@ -110,13 +114,17 @@ function draw() {
     ctx.lineTo(rectX1+rectWidth,rectY1+rectHeight);
     ctx.stroke();
 
+    // The coloured bar indicating the 'temperature'
     var amountSoFar = getAmount();
     var targetAmount = getTarget();
-
     var fractionOfTotal = amountSoFar / targetAmount;
     var y = getY(fractionOfTotal);
     var colorRectHeight = parseInt(fractionOfTotal * rectHeight);
     ctx.beginPath();
+
+
+    // Stroke is 4px, 2px of which covers up what's underneath,
+    // And rect is a little longer than it needs to be, going into bulb
     ctx.rect(rectX1+2, y, rectWidth-4, colorRectHeight+5);
     ctx.fillStyle = color;
     ctx.fill();
