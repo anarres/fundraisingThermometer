@@ -36,27 +36,17 @@ for any purpose.
 <div id="form">
     <div class="inputRow">
         <label for="targetAmount">Target amount:<br><span class="hint">(no spaces, commas, or periods please)</span></label>
-        <input type="text" id="targetAmount" size="10" value="100" onchange="targetLabelReset()">
+        <input type="text" id="targetAmount" size="10" value="100">
     </div>
 
     <div class="inputRow">
         <label for="amountSoFar">Amount raised so far:<br><span class="hint">(no spaces, commas, or periods please)</span></label>
-        <input type="text" id="amountSoFar" size="10" value="60" onchange="amountLabelReset()">
+        <input type="text" id="amountSoFar" size="10" value="60">
     </div>
 
     <div class="inputRow">
         <label for="currency">Currency symbol:</label>
-        <input type="text" id="currency" size="8" value="&pound" onchange="reset()">
-    </div>
-
-    <div class="inputRow">
-        <label for="targetAmountLabel">Target label:</label>
-        <input type="text" id="targetAmountLabel" size="20">
-    </div>
-
-    <div class="inputRow">
-        <label for="amountSoFarLabel">Amount label:</label>
-        <input type="text" id="amountSoFarLabel" size="20">
+        <input type="text" id="currency" size="3" value="&pound">
     </div>
 
     <div class="inputRow">
@@ -64,8 +54,16 @@ for any purpose.
         <input type="text" class="color" value="FF0000" id="jscolor" size="8">
     </div>
 
-    <br> <button onclick="draw()">Update image</button>
-    <br><br> <button onclick="save()">Save image</button>
+    <div class="inputRow">
+        <label for="targetAmountLabel">Label: Target amount</label>
+        <input type="text" id="targetAmountLabel" size="20">
+    </div>
+
+    <div class="inputRow">
+        <label for="amountSoFarLabel">Label: Amount raised so far</label>
+        <input type="text" id="amountSoFarLabel" size="20">
+    </div>
+
 </div> <!--#form-->
 
 <div id="canvasDiv">
@@ -73,12 +71,17 @@ for any purpose.
     </canvas><!--#thermometerImage-->
 </div> <!--#canvasDiv-->
 
+
 <p id="download">
 <a id="downloadLink">Right-click to save your image</a>
  We suggest you name it 'thermometer.png' or something like that.
 </p>
 
-<div style="clear:both;height:40px"></div>
+<div style="clear:both;"></div>
+
+<button onclick="save()" style="font-size:1.2em;">Save PNG image</button>
+
+<br>
 
 <p>
 <strong>Advantages:</strong>
@@ -92,6 +95,7 @@ it doesn't work automatically; everytime you want to increase the 'temperature' 
 
 <div id="footer">
     <p>Found a bug? Let us know what happened, and we'll try to fix it. mail: info at foofurple dot com.</p>
+    <p><a href="http://foofurple.com/index.html">Back to Foofurple main page</a></p>
 </div>
 
 </div> <!--#container-->

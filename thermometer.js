@@ -15,18 +15,19 @@ for any purpose.
 
 
 
+
 // Canvas dimensions
 var canvasWidth = 400;
-var canvasHeight = 400;
+var canvasHeight = 450;
 
 // Bulb dimensions
 var bulbX = 100;    // x-coordinate of the bulb center
-var bulbY = 350;    // y-coordinate of the bulb center
+var bulbY = 400;    // y-coordinate of the bulb center
 var bulbR = 35;     // bulb radius
 
 // Dimensions of the rectangular shaft of the thermometer
 var rectX1 = 85;
-var rectY1 = 20;
+var rectY1 = 70;
 var rectWidth = 30;     // Even number
 var rectHeight = 300;
 var rectY2 = rectY1 + rectHeight;
@@ -42,8 +43,6 @@ var tickX2 = rectX1+30;
 var smallTickX1 = rectX1+20;
 var smallTickX2 = rectX1+30;
 
-
-
 function getY(fraction) {
     var deltaY = fraction * rectHeight;
     var Y = parseInt(rectY2 - deltaY);
@@ -55,10 +54,13 @@ function getTarget() {
 function getAmount() {
     return parseFloat(document.getElementById("amountSoFar").value);
 }
-function reset() {
-    targetLabelReset();
-    amountLabelReset();
-}
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
 function targetLabelReset() {
     var label = "Target: " + document.getElementById('currency').value + document.getElementById("targetAmount").value;
     document.getElementById("targetAmountLabel").value = label;
@@ -67,12 +69,78 @@ function amountLabelReset() {
     var label = "" + document.getElementById('currency').value + document.getElementById("amountSoFar").value;
     document.getElementById("amountSoFarLabel").value = label;
 }
+
+
+function resetLabels() {
+    targetLabelReset();
+    amountLabelReset();
+}
+
+
+
+
+
+
+
+
+
+function addListeners() {
+
+    var obj1 = document.getElementById('targetAmount');
+    obj1.addEventListener('change', function() {
+        targetLabelReset();
+        draw();
+    }, false);
+
+    var obj2 = document.getElementById('amountSoFar');
+    obj2.addEventListener('change', function() {
+        amountLabelReset();
+        draw();
+    }, false);
+
+    var obj3 = document.getElementById('currency');
+    obj3.addEventListener('change', function() {
+        resetLabels();
+        draw();
+    }, false);
+
+    var jscolor = document.getElementById('jscolor');
+    jscolor.addEventListener('change', function() {
+        draw();
+    }, false);
+
+    var obj4 = document.getElementById('targetAmountLabel');
+    obj4.addEventListener('change', function() {
+        draw();
+    }, false);
+
+    var obj5 = document.getElementById('amountSoFarLabel');
+    obj5.addEventListener('change', function() {
+        draw();
+    }, false);
+
+
+}
+
+
+function init() {
+    var c=document.getElementById("thermometerImage");
+    c.setAttribute("width",canvasWidth);
+    c.setAttribute("height",canvasHeight);
+    amountLabelReset();
+    targetLabelReset();
+    draw();
+    addListeners();
+}
+
+// Allow user to download PNG image
 function save() {
     var dataUrl = document.getElementById("thermometerImage").toDataURL();
     document.getElementById('download').style.visibility = "visible";
     document.getElementById("downloadLink").setAttribute('href', dataUrl);
 }
 
+// Draw canvas
 function draw() {
 
     // Get rid of any old dataUrl that might have been generated
@@ -85,6 +153,7 @@ function draw() {
 
     // Clear existing image
     ctx.clearRect(0,0,canvasWidth,canvasHeight);
+    ctx.textAlign = 'left';
 
     // Get colour
     var color = "#" + document.getElementById("jscolor").value;
@@ -161,7 +230,6 @@ function draw() {
     ctx.lineTo(tickX2,tick2Y);
     ctx.stroke();
 
-
     // Small ticks
     var smallTick9Y = getY(0.9);
     ctx.moveTo(smallTickX1,smallTick9Y);
@@ -189,7 +257,6 @@ function draw() {
     ctx.lineTo(smallTickX2,smallTick1Y);
     ctx.stroke();
 
-
     // Write out the 'temperature'
     ctx.font = "22px Arial";
     ctx.fillStyle="#000";
@@ -198,14 +265,9 @@ function draw() {
 
     // Write out the target amount
     var label2 = document.getElementById("targetAmountLabel").value;
-    ctx.fillText(label2, 130, rectY1);
+    ctx.textAlign = 'center';
+    ctx.fillText(label2, bulbX, 30);
 }
 
-function init() {
-    var c=document.getElementById("thermometerImage");
-    c.setAttribute("width",canvasWidth);
-    c.setAttribute("height",canvasHeight);
-    amountLabelReset();
-    targetLabelReset();
-    draw();
-}
+
+
