@@ -23,60 +23,28 @@ for any purpose.
 body {
     color: #222;
     background-color: #233a4d;
-    font-family: Georgia, serif;       //Palatino, serif;
-    font-size: 18px;
-
-
     font-family: "Arial Black", Gadget, sans-serif;
     font-size: 16px;
-    color: #222;
-
 }
-#container {
-    min-width:200px;
-    max-width:700px;
-    margin:10px auto;
-    padding:2px 20px;
-    padding-bottom:100px;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 10px solid #cbbf9b;    
-}
-#container {
-    min-width: 400px;
-    max-width: 800px;
-    margin: 0px auto;
-
-    margin:10px auto;
-    padding:2px 20px;
-    padding-bottom:100px;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 10px solid #cbbf9b;    
-}
-
-
-/* Things that should have borders by default */
 input, textarea {
-    padding: 2px;
+    padding: 2px 4px;
+    border: 2px solid #999;
     border-radius: 3px;
-    border: 2px solid #666;
     font-size: 1em;
 }
 h1 {
     font-size:1.8em;
     font-weight:normal;
     text-align: center;
-    padding: 15px 0px;
-    padding-bottom: 0px;
+    padding-top: 15px;
 }
-h2, h3 {
+h2,h3,h4,h5,h6 {
     font-size:1.3em;
     font-weight:normal;
     padding: 15px 0px;
 }
 p {
-    padding: 15px 0px;
+    padding: 10px 0px;
 }
 a {
     color: #233a4d;
@@ -88,50 +56,38 @@ a:hover {
 }
 button {
     padding: 5px 9px;
+    border: 2px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
     color: #fff;
     background-color: #706b63;
-    width: 100%;
+    
 }
 button:hover {
     background-color: #7d7870;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* General typography  */
-
-
-input.radio {
-    margin-right: 10px;
-    background-color:yellow;
-}
-
-input#jscolor {
-    cursor: pointer;
+    border: 2px solid #dd6;
 }
 label {
     display: block;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.9em;
     padding-bottom: 1px;
+}
+canvas {
+    //border: 1px solid blue;
+}
+#container {
+    min-width: 200px;
+    max-width: 800px;
+    margin:10px auto;
+    padding:2px 20px;
+    padding-bottom:100px;
+    border: 10px solid #cbbf9b; 
+    border-radius: 10px;
+    background-color: #fff;
+}
+input#jscolor {
+    cursor: pointer;
 }
 .hint {
     font-weight: normal;
@@ -146,14 +102,43 @@ div#canvasImage {
     float: left;
 }
 div.inputRow {
-    padding: 10px 0px;
+    padding: 5px 0px;
 }
-p#download {
+div.popupDiv {
+    min-width: 100px;
+    max-width: 800px;
+    margin: 5px auto;
+    max-height: 60%;
+    position: fixed;
+    top: 10px;
+    z-index: 99;
     visibility: hidden;
+    background-color: #fff;
+    padding: 10px 20px;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    border: 5px solid #BFB5A6;
+    box-shadow: 1px 1px 3px #92865f;
+    overflow: auto;
+}
+div.downloadDiv p {
+    text-align: center;
+    padding: 5px;
+    clear: both;
 }
 a#downloadLink {
     font-size: 1.5em;
 }
+div.close {
+    float: right;
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+div.close:hover {
+    background-color: #eee;
+}
+
 div#footer {
     margin-top:20px;
     margin-bottom: 20px;

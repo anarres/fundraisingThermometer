@@ -71,17 +71,20 @@ for any purpose.
     </canvas><!--#thermometerImage-->
 </div> <!--#canvasDiv-->
 
-
-<p id="download">
-<a id="downloadLink">Right-click to save your image</a>
- We suggest you name it 'thermometer.png' or something like that.
-</p>
+<div class="popupDiv" id="downloadDiv">
+    <div class="close" title="close" 
+        onclick="document.getElementById('downloadDiv').style.visibility='hidden'">
+        <img src="close_icon.png" width="15px" height="15px">
+    </div>
+    <p><a id="downloadLink">Right-click to save your image</a></p>
+    <p>We suggest you choose a name like 'thermometer.png'.</p>
+</div>
 
 <div style="clear:both;"></div>
 
-<button onclick="save()" style="font-size:1.3em;">Save PNG image</button>
+<button onclick="save()">Save PNG image</button>
 
-<br>
+<div style="height:10px;clear:both;"></div>
 
 <p>
 <strong>Advantages:</strong>

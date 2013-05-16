@@ -118,8 +118,6 @@ function addListeners() {
     obj5.addEventListener('change', function() {
         draw();
     }, false);
-
-
 }
 
 
@@ -136,7 +134,7 @@ function init() {
 // Allow user to download PNG image
 function save() {
     var dataUrl = document.getElementById("thermometerImage").toDataURL();
-    document.getElementById('download').style.visibility = "visible";
+    document.getElementById('downloadDiv').style.visibility = "visible";
     document.getElementById("downloadLink").setAttribute('href', dataUrl);
 }
 
@@ -145,7 +143,7 @@ function draw() {
 
     // Get rid of any old dataUrl that might have been generated
     document.getElementById("downloadLink").removeAttribute('href');
-    document.getElementById('download').style.visibility = "hidden";
+    document.getElementById('downloadDiv').style.visibility = "hidden";
 
     // Get canvas object and canvas context
     var c=document.getElementById("thermometerImage");
@@ -196,7 +194,6 @@ function draw() {
     var y = getY(fractionOfTotal);
     var colorRectHeight = parseInt(fractionOfTotal * rectHeight);
     ctx.beginPath();
-
 
     // Stroke is 4px, 2px of which covers up what's underneath,
     // And rect is a little longer than it needs to be, going into bulb
@@ -268,6 +265,4 @@ function draw() {
     ctx.textAlign = 'center';
     ctx.fillText(label2, bulbX, 30);
 }
-
-
 
