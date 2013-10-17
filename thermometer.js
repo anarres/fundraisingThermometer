@@ -15,9 +15,8 @@ for any purpose.
 
 
 
-
 // Canvas dimensions
-var canvasWidth = 400;
+var canvasWidth = 240;
 var canvasHeight = 450;
 
 // Bulb dimensions
@@ -55,12 +54,6 @@ function getAmount() {
     return parseFloat(document.getElementById("amountSoFar").value);
 }
 
-
-
-////////////////////////////////////////////////////////////////////////////
-
-
-
 function targetLabelReset() {
     var label = "Target: " + document.getElementById('currency').value + document.getElementById("targetAmount").value;
     document.getElementById("targetAmountLabel").value = label;
@@ -69,7 +62,6 @@ function amountLabelReset() {
     var label = "" + document.getElementById('currency').value + document.getElementById("amountSoFar").value;
     document.getElementById("amountSoFarLabel").value = label;
 }
-
 
 function resetLabels() {
     targetLabelReset();
@@ -121,13 +113,6 @@ function init() {
     targetLabelReset();
     draw();
     addListeners();
-}
-
-// Allow user to download PNG image
-function save() {
-    var dataUrl = document.getElementById("thermometerImage").toDataURL();
-    document.getElementById('downloadDiv').style.visibility = "visible";
-    document.getElementById("downloadLink").setAttribute('href', dataUrl);
 }
 
 // Draw canvas
