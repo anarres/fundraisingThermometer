@@ -76,14 +76,6 @@ function resetLabels() {
     amountLabelReset();
 }
 
-
-
-
-
-
-
-
-
 function addListeners() {
 
     var obj1 = document.getElementById('targetAmount');
@@ -255,7 +247,7 @@ function draw() {
     ctx.stroke();
 
     // Write out the 'temperature'
-    ctx.font = "22px Arial";
+    ctx.font = "18px Arial";
     ctx.fillStyle="#000";
     var label = document.getElementById("amountSoFarLabel").value;
     ctx.fillText(label, 130, y); 
