@@ -56,12 +56,18 @@ for any purpose.
 
     <div class="inputRow">
         <label for="targetAmountLabel">Label: Target amount</label>
-        <input type="text" id="targetAmountLabel" size="12" maxlength="24">
+        <input type="text" id="targetAmountLabel" size="20">
     </div>
 
     <div class="inputRow">
         <label for="amountSoFarLabel">Label: Amount raised so far</label>
-        <input type="text" id="amountSoFarLabel" size="12" maxlength="12">
+        <input type="text" id="amountSoFarLabel" size="20">
+    </div>
+
+    <br>
+
+    <div class="inputRow">
+        <button onclick="draw()" style="font-size: 1.2em;">Update image</button>
     </div>
 
 </div> <!--#form-->
@@ -71,18 +77,9 @@ for any purpose.
     </canvas><!--#thermometerImage-->
 </div> <!--#canvasDiv-->
 
-<div class="popupDiv" id="downloadDiv">
-    <div class="close" title="close" 
-        onclick="document.getElementById('downloadDiv').style.visibility='hidden'">
-        <img src="close_icon.png" width="15px" height="15px">
-    </div>
-    <p><a id="downloadLink">Right-click to save your image</a></p>
-    <p>We suggest you choose a name like 'thermometer.png'.</p>
-</div>
-
 <div style="height:10px;clear:both;"></div>
 
-<p>When you are satisfied with how the thermometer looks, right-click on it and select 'Save Image As' or 'Save Picture As'.</p>
+<p style="font-size:1.2em">When you are satisfied with how the thermometer image looks, right-click on it and select 'Save Image As' or 'Save Picture As'.</p>
 
 <p>
 <strong>Advantages:</strong>

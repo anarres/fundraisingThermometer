@@ -16,7 +16,7 @@ for any purpose.
 
 
 // Canvas dimensions
-var canvasWidth = 240;
+var canvasWidth = 400;
 var canvasHeight = 450;
 
 // Bulb dimensions
@@ -117,10 +117,6 @@ function init() {
 
 // Draw canvas
 function draw() {
-
-    // Get rid of any old dataUrl that might have been generated
-    document.getElementById("downloadLink").removeAttribute('href');
-    document.getElementById('downloadDiv').style.visibility = "hidden";
 
     // Get canvas object and canvas context
     var c=document.getElementById("thermometerImage");
