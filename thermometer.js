@@ -53,7 +53,6 @@ function getTarget() {
 function getAmount() {
     return parseFloat(document.getElementById("amountSoFar").value);
 }
-
 function targetLabelReset() {
     var label = "Target: " + document.getElementById('currency').value + document.getElementById("targetAmount").value;
     document.getElementById("targetAmountLabel").value = label;
@@ -104,16 +103,72 @@ function addListeners() {
     }, false);
 }
 
-
 function init() {
+
+    // Set canvas dimensions
     var c=document.getElementById("thermometerImage");
     c.setAttribute("width",canvasWidth);
     c.setAttribute("height",canvasHeight);
+
+    // Set final image dimensions
+    var i=document.getElementById("finalImage");
+    i.setAttribute("width",canvasWidth);
+    i.setAttribute("height",canvasHeight);
+
+    notGreyedOut();
     amountLabelReset();
     targetLabelReset();
     draw();
     addListeners();
 }
+
+// Hide the canvas, convert the canvas image to a
+//dataurl, and create an image with that dataurl
+function saveImage() {
+
+    if (document.getElementById("saveImage").innerHTML == "Continue editing") {
+        continueEditing();
+    }
+    else {
+        greyedOut();
+        var c=document.getElementById("thermometerImage");
+        var dataURL = c.toDataURL();
+        document.getElementById("saveImage").innerHTML = "Continue editing";
+        document.getElementById("thermometerImage").style.display = "none";
+        document.getElementById("finalImage").src = dataURL;
+        document.getElementById("finalImage").style.display = "block";
+        document.getElementById("readyToDownload").style.visibility = "visible";
+    }
+}
+
+function greyedOut() {
+    document.getElementById("targetAmount").setAttribute("disabled","disabled");
+    document.getElementById("amountSoFar").setAttribute("disabled","disabled");
+    document.getElementById("jscolor").setAttribute("disabled","disabled");
+    document.getElementById("currency").setAttribute("disabled","disabled");
+    document.getElementById("targetAmountLabel").setAttribute("disabled","disabled");
+    document.getElementById("amountSoFarLabel").setAttribute("disabled","disabled");
+}
+
+function notGreyedOut() {
+    document.getElementById("targetAmount").removeAttribute("disabled");
+    document.getElementById("amountSoFar").removeAttribute("disabled");
+    document.getElementById("jscolor").removeAttribute("disabled");
+    document.getElementById("currency").removeAttribute("disabled");
+    document.getElementById("targetAmountLabel").removeAttribute("disabled");
+    document.getElementById("amountSoFarLabel").removeAttribute("disabled");
+}
+
+function continueEditing() {
+    document.getElementById("readyToDownload").style.visibility = "hidden";
+    document.getElementById("finalImage").style.display = "none";
+    document.getElementById("saveImage").innerHTML = "SAVE IMAGE";
+    document.getElementById("thermometerImage").style.display = "block";
+    draw();
+    notGreyedOut();
+}
+
+
 
 // Draw canvas
 function draw() {

@@ -34,52 +34,67 @@ for any purpose.
 <div style="clear:both;height:20px;"></div>
 
 <div id="form">
+
     <div class="inputRow">
         <label for="targetAmount">Target amount:<br><span class="hint">(no spaces, commas, or periods please)</span></label>
-        <input type="text" id="targetAmount" size="10" value="100">
+        <input type="text" id="targetAmount" size="10" value="100" disabled="disabled">
     </div>
 
     <div class="inputRow">
         <label for="amountSoFar">Amount raised so far:<br><span class="hint">(no spaces, commas, or periods please)</span></label>
-        <input type="text" id="amountSoFar" size="10" value="60">
+        <input type="text" id="amountSoFar" size="10" value="60" disabled="disabled">
     </div>
 
     <div class="inputRow">
         <label for="jscolor">Color:</label>
-        <input type="text" class="color" value="E30B53" id="jscolor" size="8">
+        <input type="text" class="color" value="E30B53" id="jscolor" size="8" disabled="disabled">
     </div>
 
     <div class="inputRow">
         <label for="currency">Currency symbol:</label>
-        <input type="text" id="currency" size="3" value="&pound">
+        <input type="text" id="currency" size="3" value="&pound" disabled="disabled">
     </div>
 
     <div class="inputRow">
         <label for="targetAmountLabel">Label: Target amount</label>
-        <input type="text" id="targetAmountLabel" size="20">
+        <input type="text" id="targetAmountLabel" size="20" disabled="disabled">
     </div>
 
     <div class="inputRow">
         <label for="amountSoFarLabel">Label: Amount raised so far</label>
-        <input type="text" id="amountSoFarLabel" size="20">
+        <input type="text" id="amountSoFarLabel" size="20" disabled="disabled">
     </div>
 
     <br>
+
+<!--
 
     <div class="inputRow">
         <button onclick="draw()" style="font-size: 1.2em;">Update image</button>
     </div>
 
+    <BR>
+
+-->
+
+    <div class="inputRow">
+        <button onclick="saveImage()" id="saveImage">SAVE IMAGE</button>
+    </div>
+
 </div> <!--#form-->
 
 <div id="canvasDiv">
+
+    <p id="readyToDownload">To save the image, right-click on it and select "Save image as"</p>
+
     <canvas id="thermometerImage">
     </canvas><!--#thermometerImage-->
+
+    <img src="" id="finalImage">
+
 </div> <!--#canvasDiv-->
 
 <div style="height:10px;clear:both;"></div>
-
-<p style="font-size:1.2em">When you are satisfied with how the thermometer image looks, right-click on it and select 'Save Image As' or 'Save Picture As'.</p>
 
 <p>
 <strong>Advantages:</strong>
