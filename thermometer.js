@@ -148,6 +148,11 @@ function greyedOut() {
     document.getElementById("currency").setAttribute("disabled","disabled");
     document.getElementById("targetAmountLabel").setAttribute("disabled","disabled");
     document.getElementById("amountSoFarLabel").setAttribute("disabled","disabled");
+
+    var allLabels = document.getElementsByTagName("label");
+    for (var i=0; i<allLabels.length; i++) {
+        allLabels[i].style.color = "#eee";
+    }
 }
 
 function notGreyedOut() {
@@ -157,6 +162,11 @@ function notGreyedOut() {
     document.getElementById("currency").removeAttribute("disabled");
     document.getElementById("targetAmountLabel").removeAttribute("disabled");
     document.getElementById("amountSoFarLabel").removeAttribute("disabled");
+
+    var allLabels = document.getElementsByTagName("label");
+    for (var i=0; i<allLabels.length; i++) {
+        allLabels[i].style.color = "#000";
+    }
 }
 
 function continueEditing() {
